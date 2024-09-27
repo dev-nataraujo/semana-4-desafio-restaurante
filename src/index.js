@@ -14,13 +14,14 @@ while (continuar) {
     //Crio condição para informar alerta e recomeçar aplicação caso a resposta para número de pagantes seja <= 1.
     if (numeroPessoas <= 1) {
         console.log('Atenção! A divisão da conta só pode ser realizada para no mínimo duas pessoas. Recomece e tente novamente! \n');
+        console.log('\n');
         continue;
     }
     
     //Crio variável para obter valor total da conta.
     const valorTotal = readline.questionFloat('Qual valor total da conta? \n');
     //Crio variável para obter forma de paqamento. 
-    const pagamento = readline.questionInt('Informe o nr. referente a forma de pagamento (1) Pix, (2) Dinheiro ou (3) Cartao. OBS: Pix ou Cartao recebem 10% de desconto: \n');
+    const pagamento = readline.questionInt('Informe o nr. referente a forma de pagamento (1) Pix, (2) Dinheiro ou (3) Cartao (Pix ou Dinheiro recebem 10% de desconto): \n');
 
     //Crio as variáveis matemáticas para definir e dividir o valor da conta com ou sem desconto.
     const valorDividido = valorTotal / numeroPessoas;
@@ -46,6 +47,7 @@ while (continuar) {
     //Crio condição para informar alerta e recomeçar aplicação caso a resposta para forma de pagamento seja incompatível. 
     } else if (pagamento > 3 || pagamento == 0) {
         console.log('Atenção! Informe um nr de 1 a 3 referente a forma de pagamento escolhida: (1) Pix, (2) Dinheiro, (3) Cartão. Recomece e tente novamente! \n');
+        console.log('\n');
         continue;
     }   
 
